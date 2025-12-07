@@ -74,21 +74,16 @@ export class PostureLogic {
     const leftShoulder = landmarks[11];
     const rightShoulder = landmarks[12];
 
-    // Check if landmarks exist and have good visibility (> 0.5)
-    const noseVisible = nose && nose.visibility > 0.5;
-    const leftEarVisible = leftEar && leftEar.visibility > 0.5;
-    const rightEarVisible = rightEar && rightEar.visibility > 0.5;
-    const leftShoulderVisible = leftShoulder && leftShoulder.visibility > 0.5;
-    const rightShoulderVisible = rightShoulder && rightShoulder.visibility > 0.5;
+    // Check if landmarks exist and have good visibility (> 0.3) - Relaxed from 0.5
+    const noseVisible = nose && nose.visibility > 0.3;
+    const leftShoulderVisible = leftShoulder && leftShoulder.visibility > 0.3;
+    const rightShoulderVisible = rightShoulder && rightShoulder.visibility > 0.3;
 
     // Person is present if:
     // 1. Nose is visible AND
-    // 2. At least one ear is visible AND
-    // 3. Both shoulders are visible
-    const faceVisible = noseVisible && (leftEarVisible || rightEarVisible);
-    const shouldersVisible = leftShoulderVisible && rightShoulderVisible;
-
-    return faceVisible && shouldersVisible;
+    // 2. Both shoulders are visible
+    // (Ears are often covered by hair/headphones, so we ignore them)
+    return noseVisible && leftShoulderVisible && rightShoulderVisible;
   }
 
   /**
