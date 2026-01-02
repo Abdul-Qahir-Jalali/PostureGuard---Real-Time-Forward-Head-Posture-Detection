@@ -166,21 +166,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
 - [MediaPipe](https://google.github.io/mediapipe/) - Google's ML solutions
 - [React](https://reactjs.org/) - UI framework
 - [Vite](https://vitejs.dev/) - Build tool
-
-## 📧 Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-
-Project Link: [https://github.com/yourusername/postureguard](https://github.com/yourusername/postureguard)
 
 ---
 
